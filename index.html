@@ -1,0 +1,114 @@
+<html>
+	<head>
+		<!-- CSS & jQuery for Bootstrap and jQuery    -->
+		<link href="css/bootstrap.css" rel="stylesheet">
+		<link rel="stylesheet" type="text/css" href="css/tooltipster.css" />
+		<link rel="stylesheet" type="text/css" href="css/sweet-alert.css" />
+		<link rel="stylesheet" type="text/css" href="css/slider.css" />
+		<link rel="stylesheet" href="css/font-awesome.min.css">
+		<style>
+			.tooltipster-container {
+				margin-top: 40px;
+			}
+
+			.sweetalert-container {
+				margin-top: 80px;
+				margin-bottom: 40px;
+				padding: 20px;
+				text-align: center;
+				background-color: rgb(120, 0, 30);
+			}
+
+			.sweetalert-container h3 {
+				color: white;
+			}
+
+			.sweet-alert-container button {
+				clear: both;
+				display: block;
+			}
+
+		</style>
+	</head>
+
+	<body>
+		<div class="container">
+			<div class="row col-xs-12">
+				<h1>Three More Plugins</h1>
+			</div>
+
+			<div id="slides">
+				<img src="img/img-2.jpg">
+				<img src="img/img-3.jpg">
+				<img src="img/img-4.jpg">
+				<a href="#" class="slidesjs-previous slidesjs-navigation"><i class="icon-chevron-left icon-large"></i></a>
+      			<a href="#" class="slidesjs-next slidesjs-navigation"><i class="icon-chevron-right icon-large"></i></a>
+			</div>
+			<div class="tooltipster-container row col-xs-12">
+				<div title="This is my image's tooltip message!" id="tooltip-1" class="col-xs-4">
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+				</div>
+				<div id="tooltip-2" class="col-xs-4">
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+				</div>
+				<div id="tooltip-3" class="col-xs-4">
+					<p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+				</div>
+			</div>
+			<div class="sweetalert-container row col-xs-12">
+				<h3>Click on the button below to initialize the SweetAlert plugin.</h3>
+				<button id="call-to-action" class="btn">
+					Submit
+				</button>
+			</div>
+			<form class="form-group">
+				<input type="text" class="form-control">
+				<input type="submit">
+			</form>
+		</div>
+
+		<script src="js/jquery.min.js"></script>
+		<script src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/jquery.tooltipster.js"></script>
+		<script src="js/sweet-alert.js"></script>
+		<script src="js/jquery.slides.js"></script>
+
+		<script>
+			$(document).ready(function() {
+
+				// SlideJS Plugin
+				$("#slides").slidesjs({
+					width: 940,
+					height: 250,
+					navigation: false
+				});
+
+				// ToolTipster Plugin
+				$('#tooltip-1').tooltipster({
+	                content: $('<span><img src="img/pup2.jpg" style="width: 100px" /> This is a tooltip.</span>')
+	            });
+
+	            $('#tooltip-2, #tooltip-3').tooltipster({
+	                content: $('<p>Here is another tooltip</p>')
+	            });
+
+	            $('button').click(function() {
+					// SweetAlert Plugin
+	            	swal("Good job!", "You clicked the button!", "success");
+	            });
+
+
+	            // Create a second image slider with the
+	            // included puppy pictures in the 'img' folder
+
+
+	            // Create a tooltip on the page's first <h1> element
+
+
+	            // Create a form with one text input field.
+	            // Upon hitting submit, create a sweet-alert that contains
+	            // the value of the text input field.
+			});
+		</script>
+	</body>
+</html>
